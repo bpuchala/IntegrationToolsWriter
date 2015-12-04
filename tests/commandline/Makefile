@@ -20,7 +20,7 @@ $(PLIB)/Chebyshev.hh:
 	$(BSW) -n "Chebyshev" -d "Chebyshev Polynomials up to term 30"  -v "x" -e "2*x*phi1 - phi0" --init "1.0" "x" --sym "phi0" "phi1" -m 30 --grad --hess -l $(PLIB)
 
 $(PLIB)/libpextern.so:
-	lw -d $(PLIB) -v "std::vector<double>" "double*" -l $(PLIB) -c 
+	lw -d $(PLIB) -v "std::vector<double>" -l $(PLIB) -c 
 
 FORCE:
 

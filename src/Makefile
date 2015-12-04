@@ -6,11 +6,6 @@ ID=$$(git rev-parse HEAD)
 URL=$$(git config --get remote.origin.url)
 
 
-CXX      = g++
-#CPPFLAGS += $(foreach i,$(INCLUDE),-I$(i))
-CPPFLAGS += -O3 
-
-
 all: 
 	cd fw && $(MAKE)
 	cd bsw && $(MAKE)
@@ -18,12 +13,10 @@ all:
 install: version.o
 	cd fw && $(MAKE) install
 	cd bsw && $(MAKE) install
-	
 
 uninstall:
 	cd fw && $(MAKE) uninstall
 	cd bsw && $(MAKE) uninstall
-
 
 version.cc: 
 	@sed "s/VERSION_ID/$(VERS)/" version.template.cc > version.tmp.0
@@ -31,8 +24,7 @@ version.cc:
 	@sed "s|REPO_URL|$(URL)|" version.tmp.1 > version.cc; rm version.tmp.1
 
 version.o: version.cc 
-	$(CXX) -c version.cc $(CPPFLAGS)
-
+	$(CXX) -c version.cc $(CXXFLAGS)
 
 clean: 
 	rm -f version.cc version.o

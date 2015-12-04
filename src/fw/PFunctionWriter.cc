@@ -1,8 +1,5 @@
 
-#ifndef PFunctionWriter_CC
-#define PFunctionWriter_CC
-
-#include<cstring>
+#include<string>
 #include<iostream>
 #include<sstream>
 #include<vector>
@@ -1516,5 +1513,3 @@ namespace PRISMS
 
 }
 
-
-#endif

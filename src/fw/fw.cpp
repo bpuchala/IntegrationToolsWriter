@@ -40,9 +40,13 @@ std::ostream& operator<<(std::ostream &sout, const std::vector<T> &v)
 
 void print_examples( std::ostream &sout)
 {
-    sout << "\n\nExamples: " << std::endl;
-    sout << "fw -n \"MyFunc\" -v \"x\" \"y\" -d \"x variable\" \"y variable\"  --sym \"x^3 + x^2*y + x*y^2 + y^3\" --grad --hess -l \"/path/to/MyLibrary\"\n" << std::endl;
-    sout << "fw -n \"MyPieceWiseFunc\" -v \"x\" \"y\" -d \"x variable\" \"y variable\"  --piecewise \'[ { \"func\": \"pow(x,2) + pow(y,2)\", \"cond\":[\"pow(x,2) + pow(y,2)<0.5*0.5\"] }, { \"func\": \"sqrt(pow(x,2) + pow(y,2)) - 0.25\", \"cond\":[\"pow(x,2) + pow(y,2)>=0.5*0.5\"] } ]\' --grad --hess -l \"/path/to/MyLibrary\"\n" << std::endl;
+    sout << "\n\nExamples: \n\n";
+    
+    sout << "A polynomial function:\n";
+    sout << "fw -n \"MyFunc\" -v \"x\" \"y\" -d \"x variable\" \"y variable\"  --sym \"x^3 + x^2*y + x*y^2 + y^3\" --grad --hess -l \"/path/to/MyLibrary\"\n\n";
+    
+    sout << "A piece-wise function:\n";
+    sout << "fw -n \"MyPieceWiseFunc\" -v \"x\" \"y\" -d \"x variable\" \"y variable\"  --piecewise \'[ { \"func\": \"pow(x,2) + pow(y,2)\", \"cond\":[\"pow(x,2) + pow(y,2)<0.5*0.5\"] }, { \"func\": \"sqrt(pow(x,2) + pow(y,2)) - 0.25\", \"cond\":[\"pow(x,2) + pow(y,2)>=0.5*0.5\"] } ]\' --grad --hess -l \"/path/to/MyLibrary\"\n\n";
 }
 
 const size_t ERROR_IN_COMMAND_LINE = 1; 

@@ -40,6 +40,17 @@ std::ostream& operator<<(std::ostream &sout, const std::vector<T> &v)
     return sout;
 }
 
+void print_examples( std::ostream &sout)
+{
+    sout << "\n\nExamples: \n\n";
+    
+    sout << "A monomial basis set:\n";
+    sout << "bsw -n \"Monomial\" -d \"Monomials up to 30\" -v \"x\" --index \"i\" -e \"x^i\" -m 30 --grad --hess -l \"/path/to/MyLibrary\"\n\n";
+    
+    sout << "A Chebyshev polynomial basis set:\n";
+    sout << "bsw -n \"Chebyshev\" -d \"Chebyshev Polynomials up to term 30\"  -v \"x\" -e \"2*x*phi1 - phi0\" --init \"1.0\" \"x\" --sym \"phi0\" \"phi1\" -m 30 --grad --hess -l \"/path/to/MyLibrary\"\n\n";
+}
+
 const size_t ERROR_IN_COMMAND_LINE = 1; 
 const size_t SUCCESS = 0; 
 const size_t ERROR_UNHANDLED_EXCEPTION = 2; 
@@ -88,6 +99,7 @@ int main(int argc, char *argv[])
             if ( vm.count("help")  ) 
             { 
                 std::cout << "bsw: Basis Set Writer Usage" << std::endl << desc << std::endl; 
+                print_examples(std::cout);
                 return SUCCESS; 
             }
             

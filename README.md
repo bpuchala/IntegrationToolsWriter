@@ -24,9 +24,9 @@ Installation
         git clone https://github.com/prisms-center/IntegrationToolsWriter.git
         cd IntegrationToolsWriter
 
-2. Checkout the branch containing the version you wish to install. Latest is ``v1.0.0``:
+2. Checkout the branch containing the version you wish to install. Latest is ``v1.0.1``:
 
-        git checkout v1.0.0
+        git checkout v1.0.1
 
 3. From the root directory of the repository:
 
@@ -34,11 +34,13 @@ Installation
 
     You might need to set the following environment variables:
     	
-    - BIN: This specifies where ``fw`` and ``bsw`` will be installed. If not set, the default location is ``/usr/local/bin``
+    - PTOOLS_PREFIX: If this variable is set, ``fw`` and ``bsw`` will be installed in ```$(PTOOLS_PREFIX)/bin```. If not set, the default location is ``/usr/local/bin``
     	
-    - BOOST: This specifies where the Boost libraries are located. If not set, the default compiler search path is used.
-    	
-    - GINAC: This specifies where the GiNaC header files and libraries are located. They are expected to be found at $GINAC/include and $GINAC/lib, respectively. If not set, the default compiler search path are used.
+    - PTOOLS_BOOST_PREFIX: If this variable is set, ```$(PTOOLS_BOOST_PREFIX)/include``` and ```$(PTOOLS_BOOST_PREFIX)/lib``` will searched for Boost headers and libraries. If not set, the default compiler search path is used.
+    
+    - PTOOLS_GINAC_PREFIX: If this variable is set, ```$(PTOOLS_GINAC_PREFIX)/include``` and ```$(PTOOLS_GINAC_PREFIX)/lib``` will searched for GiNaC headers and libraries. If not set, the default compiler search path is used.
+    
+    - PTOOLS_CLN_PREFIX: If this variable is set, ```$(PTOOLS_CLN_PREFIX)/include``` and ```$(PTOOLS_CLN_PREFIX)/lib``` will searched for GiNaC headers and libraries. If not set, the default compiler search path is used.
 
 
 
@@ -93,4 +95,10 @@ Release 1.0.0 will include:
     - With only ``double`` OutType
 - The Basis Writer, bsw
     - With only 'double' for InType and OutType
+
+Release 1.0.1 includes:
+
+- Expects IntegrationTools lw version 1.0.1 for ```make test```
+- Updated Makefiles, with new environment variabls controlling compilation options
+
 

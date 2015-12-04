@@ -1,6 +1,3 @@
-#ifndef WriterVersion_CC
-#define WriterVersion_CC
-
 #include<string>
 
 namespace PRISMS
@@ -20,5 +17,3 @@ namespace PRISMS
         return "REPO_URL";
     }
 }
-
-#endif

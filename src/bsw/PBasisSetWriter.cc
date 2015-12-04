@@ -1,7 +1,4 @@
 
-#ifndef PBasisSetWriter_CC
-#define PBasisSetWriter_CC
-
 #include<cstring>
 #include<iostream>
 #include<sstream>
@@ -1078,6 +1075,3 @@ namespace PRISMS
     }
 
 }
-
-
-#endif
